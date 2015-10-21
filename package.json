@@ -1,0 +1,43 @@
+{
+  "name": "alt-resolver",
+  "version": "0.0.1",
+  "description": "A connect to stores that works with react resolver",
+  "main": "lib/resolver.js",
+  "scripts": {
+    "build": "npm run clean && npm run transpile",
+    "clean": "rimraf lib",
+    "pretest": "npm run clean && npm run transpile",
+    "test": "babel-node test/index.js",
+    "transpile": "babel src --out-dir lib --stage 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:altjs/resolver.git"
+  },
+  "dependencies": {
+    "alt-react": "0.0.1",
+    "react-resolver": "2.0.3"
+  },
+  "keywords": [
+    "resolver",
+    "async",
+    "resolve",
+    "isomorphic",
+    "flux",
+    "dispatch",
+    "connect",
+    "react",
+    "stores"
+  ],
+  "author": "Josh Perez <josh@goatslacker.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/altjs/resolver/issues"
+  },
+  "homepage": "https://github.com/altjs/resolver",
+  "devDependencies": {
+    "react": "0.14.0",
+    "react-dom": "0.14.0",
+    "rimraf": "2.4.3"
+  }
+}
