@@ -20,19 +20,25 @@ export default (Component, spec) => {
 
       this.setConnections(props, context, spec)
 
-      this.state = this.resolveState()
+      this.state = this.resolveState(props)
     }
 
     resolveState(nextProps) {
       const resolve = this.config.resolve
-        ? toResolverProps(this.call(this.config.resolve), nextProps)
+        ? toResolverProps(this.call(this.config.resolve, nextProps), nextProps)
         : {}
       return { resolve }
     }
 
     componentWillReceiveProps(nextProps) {
-      if (this.config.willReceiveProps) this.call(this.config.willReceiveProps)
+      if (this.config.willReceiveProps) {
+        this.call(this.config.willReceiveProps, nextProps)
+      }
       this.setState(this.resolveState(nextProps))
+    }
+
+    storeDidChange() {
+      this.setState(this.resolveState(this.props))
     }
 
     render() {
