@@ -1,6 +1,6 @@
 {
   "name": "alt-resolver",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A connect to stores that works with react resolver",
   "main": "lib/resolver.js",
   "scripts": {
