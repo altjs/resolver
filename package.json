@@ -6,6 +6,7 @@
   "scripts": {
     "build": "npm run clean && npm run transpile",
     "clean": "rimraf lib",
+    "prepublish": "npm run build",
     "pretest": "npm run clean && npm run transpile",
     "test": "babel-node test/index.js",
     "transpile": "babel src --out-dir lib --stage 0"
